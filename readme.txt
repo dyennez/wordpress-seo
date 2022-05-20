@@ -236,6 +236,29 @@ Your question has most likely been answered on our help center: [yoast.com/help/
 
 == Changelog ==
 
+= 19.9 =
+Release Date: May 31st, 2022
+
+
+Enhancements:
+
+* Adds a feature to remove post comment RSS feeds
+
+Bugfixes:
+
+* Add localization to the First-time configuration steps' titles
+* Fixes a bug in the First-time Configuration where saving an invalid organization name would fail without feedback.
+* Fixes a bug where an error in saving the Site representation step of the First-time configuration would not block the advancement to the next step.
+* Fixes a bug where editing an existing post created in Block editor in Elementor would result in an analysis result discrepancy.
+* Fixes a bug where items in lists were not excluded for the readability assessment that checks whether consecutive sentences do not begin with the same words.
+* Fixes a bug where the schema would not be updated with the new logo when the user changed it via the First Time Configuration.
+* Fixes a bug where users would be able to leave a step containing errors by clicking another step's edit button.
+
+Other:
+
+* Adds a Redirects page with an upsell to Premium.
+* Deprecates the configuration workout classes.
+
 = 19.0 =
 Release Date: May 31st, 2022
 
@@ -259,29 +282,6 @@ Other:
 
 * Adds a Redirects page with an upsell to Premium.
 * Deprecates the configuration workout classes.
-
-= 18.9 =
-Release Date: May 17th, 2022
-
-Yoast SEO 18.9 is out now! In this release, we have improved the first experience users have with the plugin. The first-time configuration takes users by the hand and guides them in properly setting everything up so that search engines understand their site. Make sure to run that first-time configuration to see if you’ve filled everything in correctly! Read more about what's new in Yoast SEO 18.9 in [our release post in English](https://yoa.st/release-17-5-22) or [our release post in Spanish](https://yoa.st/release-17-5-22-spanish)!
-
-Enhancements:
-
-* Adds an `installation successful` page to welcome first-time users.
-* Introduces the First-time configuration, replacing and improving the Configuration Workout.
-* Renames the main admin menu item to `Yoast SEO` instead of `SEO`.
-
-Bugfixes:
-
-* Fixes a bug that would lead to race conditions when using persistent object caching.
-* Fixes a bug where a 403 error page would be thrown when a user tried to access the old configuration wizard.
-* Fixes a bug where our How To and FAQ blocks would not handle focus correctly when using WordPress 6.0.
-* Fixes a bug where the global var $post is sometimes modified unexpectedly. Props to [grantalltodavid](https://github.com/grantalltodavid).
-
-Other:
-
-* Adds a `Premium` badge to the Workouts menu item.
-* Updates the look of the Accounts tab in the Social page.
 
 = Earlier versions =
 For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).
