@@ -16,6 +16,8 @@ import { forEach } from "lodash-es";
 export const getMorphologicalPassives = function( paper, researcher ) {
 	const isPassiveSentence = researcher.getHelper( "isPassiveSentence" );
 	const text = paper.getText();
+	// It's not necessary to pass the memoized tokenizer from the researcher here, since only Japanese has the language specific tokenizer.
+	// Passive voice analysis is not supported in Japanese.
 	const sentences = getSentences( text )
 		.map( function( sentence ) {
 			return new Sentence( sentence );
@@ -58,9 +60,7 @@ export const getPeriphrasticPassives = function( paper, researcher ) {
 	const totalNumberSentences = sentences.length;
 	const passiveSentences = [];
 
-	console.log( sentences );
 	forEach( sentences, function( sentence ) {
-
 		const strippedSentence = stripHTMLTags( sentence.getSentenceText() ).toLocaleLowerCase();
 
 		// The functionality based on sentencePart objects should be rewritten using array indices of stopwords and auxiliaries.
@@ -113,11 +113,9 @@ export default function getPassiveVoice( paper, researcher ) {
 	const passiveType = researcher.getConfig( "passiveConstructionType" );
 
 	if ( passiveType === "periphrastic" ) {
-		console.log( "Periphrastic" );
 		return getPeriphrasticPassives( paper, researcher );
 	}
 	if ( passiveType === "morphological" ) {
-		console.log( "Morphological" );
 		return getMorphologicalPassives( paper, researcher );
 	}
 
